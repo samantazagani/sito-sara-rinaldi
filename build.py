@@ -61,16 +61,17 @@ def mini_arcs(n):
     s = '<svg viewBox="0 0 96 56" fill="none" aria-hidden="true">'
     for i in range(n):
         r = 12 + i * 12
-        s += (f'<path d="M{48 - r} 52 A{r} {r} 0 0 1 {48 + r} 52" stroke="{ACC if i == n - 1 else "#a9aed0"}" '
-              'stroke-width="1.4" stroke-linecap="round"/>')
-    return s + f'<circle cx="48" cy="52" r="2.5" fill="{ACC}"/></svg>'
+        s += (f'<path class="arc" pathLength="1" style="--k:{i}" d="M{48 - r} 52 A{r} {r} 0 0 1 {48 + r} 52" '
+              f'stroke="{ACC if i == n - 1 else "#a9aed0"}" stroke-width="1.4" stroke-linecap="round"/>')
+    return s + f'<circle class="dot" style="--k:{n}" cx="48" cy="52" r="2.5" fill="{ACC}"/></svg>'
 
 def round_svg():
     s = '<svg viewBox="0 0 340 340" fill="none" aria-hidden="true">'
-    for i, r in enumerate([168, 150, 132]):
-        dash = ' stroke-dasharray="2 6"' if i == 2 else ""
-        s += f'<circle cx="170" cy="170" r="{r}" stroke="{ACC if i == 1 else RING}" stroke-width="1"{dash}/>'
-    return s + f'<circle cx="{170 + 150 * math.cos(-0.9):.1f}" cy="{170 + 150 * math.sin(-0.9):.1f}" r="4" fill="{ACC}"/></svg>'
+    s += f'<circle cx="170" cy="170" r="168" stroke="{RING}" stroke-width="1"/>'
+    s += f'<circle cx="170" cy="170" r="150" stroke="{ACC}" stroke-width="1"/>'
+    s += f'<g class="spin rev"><circle cx="170" cy="170" r="132" stroke="{RING}" stroke-width="1" stroke-dasharray="2 6"/></g>'
+    s += f'<g class="spin"><circle cx="{170 + 150 * math.cos(-0.9):.1f}" cy="{170 + 150 * math.sin(-0.9):.1f}" r="4" fill="{ACC}"/></g></svg>'
+    return s
 
 # ---------- articoli ----------
 def parse_article(path):
@@ -142,6 +143,7 @@ def head(title, desc, path, og_type="website", extra="", robots="index, follow")
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{{if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("anim")}}catch(e){{}}</script>
 <link rel="stylesheet" href="/style.css">
 {extra}</head>
 <body>
