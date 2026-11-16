@@ -1,0 +1,17 @@
+{
+  // Il nome deve essere uguale a quello del progetto su Cloudflare
+  "name": "sito-sara-rinaldi",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // solo le richieste a /api/ passano dal Worker, il resto è servito come sito statico
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "GITHUB_REPO": "samantazagani/sito-sara-rinaldi",
+    "GITHUB_BRANCH": "main"
+  }
+}

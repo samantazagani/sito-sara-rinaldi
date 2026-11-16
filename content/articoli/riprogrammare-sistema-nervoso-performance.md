@@ -2,6 +2,7 @@
 title: Come riprogrammare il sistema nervoso per mantenere la calma quando tutto trema
 meta_title: Come riprogrammare il sistema nervoso per alte prestazioni
 description: Impara a gestire lo stress e mantenere la calma sotto pressione. Guida al rilascio delle tensioni e alla regolazione del sistema nervoso per professionisti.
+date: 2026-11-14
 tag: Performance
 cta_title: Costruisci un business solido su un sistema nervoso forte
 cta_text: Il successo nel business e il corpo dei tuoi sogni non si costruiscono lottando contro il tuo corpo, ma imparando a collaborare con la tua biologia per sostenere carichi sempre più grandi senza cedere.

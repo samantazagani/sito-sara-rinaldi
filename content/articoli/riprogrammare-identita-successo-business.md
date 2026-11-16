@@ -2,6 +2,7 @@
 title: Non ti serve un altro obiettivo: ti serve una nuova identità
 meta_title: Ripensare il successo: riprogramma la tua identità
 description: Smetti di rincorrere obiettivi con la forza di volontà. Scopri come l'allineamento dell'identità trasforma il tuo business e la tua energia fisica.
+date: 2026-11-15
 tag: Identità
 cta_title: Inizia a vivere come la versione che desideri essere
 cta_text: Non devi aspettare di avere l'agenda piena o il corpo perfetto per iniziare a sentirti un professionista di successo e un atleta della mente. Il cambiamento parte adesso, dalla decisione interna di non accettare più standard inferiori al tuo reale potenziale.

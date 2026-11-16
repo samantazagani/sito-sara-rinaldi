@@ -3,7 +3,8 @@
 Sito statico (HTML + CSS, nessun database). La cartella da pubblicare è **public/**.
 
 ## Pubblicazione su Cloudflare
-Framework: None · Comando di build: vuoto · Cartella di output: `public`
+Vedi `GUIDA-PANNELLO-ARTICOLI.md` (build `python3 build.py`, deploy `npx wrangler deploy`, cartella dei file `public`).
+Il pannello `/admin` per scrivere gli articoli è descritto nella stessa guida.
 
 ## Prima di andare online (in `build.py`, sezione CONFIGURAZIONE)
 - `PIVA` e `INDIRIZZO`: dati di Sara per footer e privacy policy
@@ -17,3 +18,5 @@ Finché mancano, il sito è in **modalità prova** (non indicizzato da Google). 
 2. `python3 build.py`
 3. Carica le modifiche: il sito si aggiorna da solo.
 Il nome del file diventa l'indirizzo: `blog/<nome-file>`.
+
+Nota: gli articoli hanno una data interna (`date:` nella testata) usata solo per l'ordine nel blog.

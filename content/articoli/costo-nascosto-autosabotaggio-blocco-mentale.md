@@ -2,6 +2,7 @@
 title: Perché i tuoi sforzi non bastano: anatomia (e soluzione) del blocco invisibile
 meta_title: Perché ti senti bloccato: il costo nascosto dell'autosabotaggio
 description: Scopri perché la forza di volontà non basta a far esplodere il tuo business. Comprendi la biologia del blocco mentale e come superare l'autosabotaggio.
+date: 2026-11-16
 tag: Blocchi mentali
 cta_title: Vuoi sbloccare davvero il tuo potenziale?
 cta_text: Il cambiamento reale non arriva leggendo un articolo, ma nel momento in cui decidi di farti affiancare da chi sa esattamente come guidarti oltre quel soffitto di cristallo. Se senti che è arrivato il momento di fare sul serio, di far esplodere la tua energia e di trasformare la tua visione in realtà:

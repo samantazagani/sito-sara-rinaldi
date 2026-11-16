@@ -74,13 +74,22 @@ def round_svg():
     return s
 
 # ---------- articoli ----------
+DEFAULT_CTA_TITLE = "Parliamone insieme"
+DEFAULT_CTA_TEXT = "Se questo articolo ti ha fatto riflettere, il passo successivo è una conversazione. Prenota una sessione gratuita di 30 minuti: ci conosciamo e capiamo insieme da dove partire."
+
 def parse_article(path):
-    raw = path.read_text(encoding="utf-8")
+    raw = path.read_text(encoding="utf-8").replace("\r\n", "\n")
     _, fm, body = raw.split("---\n", 2)
     meta = {}
     for line in fm.strip().splitlines():
-        k, v = line.split(":", 1); meta[k.strip()] = v.strip()
+        if ":" in line:
+            k, v = line.split(":", 1); meta[k.strip()] = v.strip()
     meta["slug"] = path.stem
+    meta.setdefault("meta_title", meta.get("title", path.stem))
+    meta.setdefault("tag", "Blog")
+    meta.setdefault("date", "")
+    meta["cta_title"] = meta.get("cta_title") or DEFAULT_CTA_TITLE
+    meta["cta_text"] = meta.get("cta_text") or DEFAULT_CTA_TEXT
     meta["words"] = len(re.findall(r"\w+", body))
     meta["minutes"] = max(1, round(meta["words"] / 200))
     meta["html"] = md_to_html(body)
@@ -111,8 +120,9 @@ def md_to_html(md):
     return "\n".join(out)
 
 ARTICLES = [parse_article(p) for p in sorted((ROOT / "content/articoli").glob("*.md"))]
-ORDER = ["costo-nascosto-autosabotaggio-blocco-mentale", "riprogrammare-identita-successo-business", "riprogrammare-sistema-nervoso-performance"]
-ARTICLES.sort(key=lambda a: ORDER.index(a["slug"]) if a["slug"] in ORDER else 99)
+# più recenti per primi; a parità di data, ordine alfabetico del titolo
+ARTICLES.sort(key=lambda a: a["title"])
+ARTICLES.sort(key=lambda a: a["date"], reverse=True)
 
 # ---------- struttura comune ----------
 def head(title, desc, path, og_type="website", extra="", robots="index, follow"):
@@ -354,7 +364,7 @@ for a in ARTICLES:
         "@context": "https://schema.org", "@type": "Article", "headline": a["title"], "description": a["description"],
         "author": {"@type": "Person", "name": NAME}, "publisher": {"@type": "Organization", "name": BRAND},
         "mainEntityOfPage": f'{SITE_URL}/blog/{a["slug"]}', "image": f"{SITE_URL}/img/og.png", "inLanguage": "it"},
-        ensure_ascii=False) + "</script>\n")
+        ensure_ascii=False).replace("</", "<\\/") + "</script>\n")
     write(f"blog/{a['slug']}.html", head(f'{a["meta_title"]} | {NAME}', a["description"], f'/blog/{a["slug"]}', "article", ld) + header("blog") + main + footer())
 
 # ---------- privacy ----------
@@ -405,6 +415,7 @@ write("404.html", head(f"Pagina non trovata · {BRAND}", "Pagina non trovata.", 
 shutil.copy(ROOT / "static/style.css", OUT / "style.css")
 shutil.copytree(ROOT / "static/fonts", OUT / "fonts", dirs_exist_ok=True)
 shutil.copytree(ROOT / "static/img", OUT / "img", dirs_exist_ok=True)
+shutil.copytree(ROOT / "static/admin", OUT / "admin", dirs_exist_ok=True) if (ROOT / "static/admin").exists() else None
 for f in ["site.js", "favicon.svg", "apple-touch-icon.png"]:
     if (ROOT / "static" / f).exists(): shutil.copy(ROOT / "static" / f, OUT / f)
 
