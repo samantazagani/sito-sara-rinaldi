@@ -19,5 +19,4 @@ Finché mancano, il sito è in **modalità prova** (non indicizzato da Google). 
 3. Carica le modifiche: il sito si aggiorna da solo.
 Il nome del file diventa l'indirizzo: `blog/<nome-file>`.
 
-
 Nota: gli articoli hanno una data interna (`date:` nella testata) usata solo per l'ordine nel blog.

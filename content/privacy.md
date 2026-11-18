@@ -23,7 +23,7 @@ Se in futuro userò strumenti di analisi o di altro tipo, aggiornerò questa pag
 Non vendo né cedo i tuoi dati. Possono trattarli, per mio conto, i fornitori tecnici di cui mi servo, che agiscono come responsabili del trattamento:
 
 - **Cloudflare, Inc.**, per l'erogazione e la protezione del sito (rete, DNS, certificati di sicurezza);
-- **Google**, per il servizio di posta elettronica (Gmail) con cui ricevo e rispondo alle tue email.
+- **Il fornitore del servizio di posta elettronica** con cui ricevo e rispondo alle tue email.
 
 ## 5. Trasferimenti fuori dall'Unione europea
 

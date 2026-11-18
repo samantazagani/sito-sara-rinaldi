@@ -12,11 +12,11 @@ from urllib.parse import quote
 SITE_URL = "https://sararinaldimentalcoach.com"
 NAME = "Sara Rinaldi"
 BRAND = "Mindset Revolution"
-EMAIL = "sara.rinaldi.training@gmail.com"
-PIVA = ""         # es. "P.IVA 01234567890"
-INDIRIZZO = ""    # es. "Via Roma 1, 44121 Ferrara (FE)"
-CONSERVAZIONE = ""  # es. "per 12 mesi dall'ultimo scambio, se non nasce un rapporto professionale"
-AGGIORNATA = "16 novembre 2026"
+EMAIL = "info@sararinaldimentalcoach.com"
+PIVA = "P.IVA 04393241205"         # es. "P.IVA 01234567890"
+INDIRIZZO = "Via Nicolò Paganini 2/3, 40137 Bologna (BO)"    # es. "Via Roma 1, 44121 Ferrara (FE)"
+CONSERVAZIONE = "per 12 mesi dall'ultimo scambio, se non nasce un rapporto professionale"  # es. "per 12 mesi dall'ultimo scambio, se non nasce un rapporto professionale"
+AGGIORNATA = "18 novembre 2026"
 # ========================================================
 
 ROOT = Path(__file__).parent

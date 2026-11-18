@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://sararinaldimentalcoach.com/sitemap.xml
